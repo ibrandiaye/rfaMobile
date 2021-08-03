@@ -1,0 +1,7 @@
+{
+  "name": "rfamobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
