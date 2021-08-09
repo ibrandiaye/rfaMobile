@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "rfamobile",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
