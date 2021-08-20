@@ -18,7 +18,6 @@ export class UserPage implements OnInit {
     this.userForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      username: [],
       password: ['', [Validators.required]]
     });
   }
@@ -32,6 +31,11 @@ export class UserPage implements OnInit {
       console.log('All fields are required.');
       return false;
     } else {
+      this.userService.createUser(this.user).subscribe((resp: any)=>{
+        console.log('succes');
+      },(error) =>{
+
+      });
       console.log(this.user);
     }
   }

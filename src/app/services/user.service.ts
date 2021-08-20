@@ -9,13 +9,13 @@ import { User } from '../models/user';
 })
 export class UserService {
 
-  endpoint = 'http://localhost:3000/users';
+  endpoint = 'http://localhost:8000/api';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   constructor(private httpClient: HttpClient) { }
   createUser(user: User): Observable<any> {
-    return this.httpClient.post<User>(this.endpoint, JSON.stringify(user), this.httpOptions)
+    return this.httpClient.post<User>(this.endpoint + '/user/save', JSON.stringify(user), this.httpOptions)
       .pipe(
         catchError(this.handleError<User>('Error occured'))
       );
